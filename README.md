@@ -1,5 +1,5 @@
 # DMN-data-reporter-assessment
-_This document was created by Levi Jiang in February 2026 for the exclusive reference of The Dallas Morning News' data team recruitment process._
+_This document is created by Levi Jiang in February 2026 for the exclusive reference of The Dallas Morning News' data team recruitment process._
 
 ## Task 1
 
@@ -21,6 +21,10 @@ _This document was created by Levi Jiang in February 2026 for the exclusive refe
 2. **Spelling Inconsistency**: For example, for candidate William Roth, his name is spelled in 3 different ways in this dataset: Bill Roth, William Roth and WILLIAM ROTH. This might cause double-counting or grouping in our analysis. We have to check all of the candidates and do some manual standardizations.
 3. **Lack of Details**: After carefully reviewing several campaign finance reports, I noticed that the dataset still lacks certain details. For instance, the reports clearly disclose the purpose of each expenditure, but the dataset only lists a vague term like “Expenditure.” If we only look at the dataset, we cannot tell whether a candidate spent $1,000 at Walmart for lobbying or simply buying office supplies.
 
+### Possible Angles/Potential Stories
+1. **Does advantage in fundraising lead to a council seat** - We can analyze the total donations, donation size distributions and frequency of large donors by candidate to see if the incumbent City Council members received more donations and other financial support than their competitors.
+2. **The political finance network** - We can find out all the people or business that funded or received money from multiple council members. Our analysis here is limited to politics related financial transactions; routine office supply purchases and food expenses are not included in this discussion. This will enable us to uncover the network between Dallas's political and business worlds, revealing which stakeholders are pulling the strings behind the city's power structure.
+3. **Where are campaign money from or going to (local vs outside Dallas)** - With the geo info, we can look into whether a council member's financial transactions happened mainly in their communities or around outside interests. We might find something interesting in the comparison of Dallas vs non-Dallas, Texas vs out-of-state, and other geographic concentrations.
 
 ## Task 3
 Overall thinking: When working with a colleague from a non-tech background, I'd like to make sure:
