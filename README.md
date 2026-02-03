@@ -22,13 +22,27 @@ _This document is created by Levi Jiang in February 2026 for the exclusive refer
 ### Alternative Method
 - Look for other download options (downloadable CSV/Excel/PDF) or APIs
 - Check some other source website like Texas Open Data Portal
-- Request the dataset directly from the court administration office
+- Contact some government agencies like the court administration office for help
 - File a public records request
 - (If AI is permitted in our newsroom for data collecting) Use screen recording or screenshot to capture entire webpages, then use AI to transform them into datasets
-- Ask for help from researchers and legal nonprofits
+- Ask some researchers and legal nonprofits for available materials
 
 ### Scrapping Tools and Methods
+- If the table loads via background requests, then usually we can find an endpoint returning HTML or JSON. I can use Python `requests` to replicate these calls across the desired years and months, and clean them up with `pandas`.
+- If the data is embedded in static HTML elements then I can use `requests` and `pandas’ read_html` function to extract the tables.
+- Pseudo code:
+```
+for year in [2023, 2024, 2025]:
+    for month in all_months:
+        request data for Dallas County Grand Jury Cases Scheduled Report
+        parse table rows
+        clean column names
+        append to our dataset
 
+standardize dates and text fields
+check duplicates and errors
+export to CSV
+```
 
 ## Task 2
 ### Steps to Assess Strength and Weaknesses
