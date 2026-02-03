@@ -2,24 +2,51 @@
 _This document is created by Levi Jiang in February 2026 for the exclusive reference of The Dallas Morning News' data team recruitment process._
 
 ## Task 1
+### Questions for the Reporter
+- The records available for inquiry on the website are cases scheduled for hearing between 2023 and 2025. Are you seeking cases that occurred during this period or cases that were scheduled for hearing?
+- What story you're going to tell? What are you hoping to find from these cases? Are you looking for patterns or trends (race, sex, charges, regions)?
+- Is there a specific concern (racial disparities, backlog, certain offenses, court delays)?
+- From an ethical perspective, we should discuss the use of personally identifiable information, like names and addresses, how race data would be processed, and whether any records may involve sensitive or sealed cases.
+
+### Three Technical Checks
+- Inspect the page to see how the table is loaded, checking whether the data exists directly in an HTML div, is retrieved through background API, or is rendered dynamically via JavaScript.
+- Check the site’s robots.txt file or other posted terms of use to determine whether automated scraping is permitted and whether specific sections are restricted.
+- Check the page load speed and if there's blocking after repeated requests. It can help determine whether we can use auto scrapping to pull all the data at once or need some throttling.
+
+### Ethical or Legal Considerations
+- Is this dataset intended for public use? Does the site restrict automated access?
+- Name, race, sex and home address are all sensitive personal data. Will this expose people to harm or harassment?
+- Are we considering the invisible enforcement patterns, policing bias and socioeconomic disparities behind all these data?
+- For some special cases, like domestic violence and minors involved cases, how should we make sure we're not invading privacy and protect the vulnerable people?
+
+### Alternative Method
+- Look for other download options (downloadable CSV/Excel/PDF) or APIs
+- Check some other source website like Texas Open Data Portal
+- Request the dataset directly from the court administration office
+- File a public records request
+- (If AI is permitted in our newsroom for data collecting) Use screen recording or screenshot to capture entire webpages, then use AI to transform them into datasets
+- Ask for help from researchers and legal nonprofits
+
+### Scrapping Tools and Methods
+
 
 ## Task 2
-### Steps to assess the dataset’s strength and weaknesses
-1. I will get an overall understanding of the dataset first. I will read the column definitions carefully, and pull out some rows to see if they align with the definition, and whether each row reflects an individual contribution, credit, or other transaction type and how amounts should be interpreted. I will also try to download available files to see what format is used here. I aim to understand what each record represents and how reliable the fields are for analysis.
-2. The second step is to assess completeness and coverage by checking date ranges, records by candidate, and the prevalence of missing values in key fields such as amount, donor name, business name, and address. This will identify temporal gaps, underreported candidates, or structural bias in the data.
-3. Then we can evaluate data quality in some columns like contribution amounts, dates, and contributor identifiers, looking for formatting issues, missing values or inconsistencies. Also, since the dataset includes geo info, I will check how complete and accurate it is to determine whether location-based analysis can be applied here.
-4. Clarify the dataset’s scope and limitations, such as whether it includes only itemized contributions, how non-cash transactions are recorded, and what reporting thresholds may affect the coverage.
+### Steps to Assess Strength and Weaknesses
+- I will get an overall understanding of the dataset first. I will read the column definitions carefully, and pull out some rows to see if they align with the definition, and whether each row reflects an individual contribution, credit, or other transaction type and how amounts should be interpreted. I will also try to download available files to see what format is used here. I aim to understand what each record represents and how reliable the fields are for analysis.
+- The second step is to assess completeness and coverage by checking date ranges, records by candidate, and the prevalence of missing values in key fields such as amount, donor name, business name, and address. This will identify temporal gaps, underreported candidates, or structural bias in the data.
+- Then we can evaluate data quality in some columns like contribution amounts, dates, and contributor identifiers, looking for formatting issues, missing values or inconsistencies. Also, since the dataset includes geo info, I will check how complete and accurate it is to determine whether location-based analysis can be applied here.
+- Clarify the dataset’s scope and limitations, such as whether it includes only itemized contributions, how non-cash transactions are recorded, and what reporting thresholds may affect the coverage.
 
 ### Strength
-1. **Data Transparency and Credibility**: IIn each record, there's a direct link to original PDFs so reporters can pull context and verify the data easily. Readers also can benefit from the accessibility of primary sources.
-2. **Geographic Info**: With the address and geo_location info, we are able to analyze the money a candidate spent on local or out-of-state business. 
-3. **Transaction-level Detail**: Each row appears to represent an individual contribution or transaction with amount, time, location, etc. We are able to track the money over time, aggregate by candidate, identify any time or location-based patterns and compare them. This is stronger than summary-level reports.
+- **Data Transparency and Credibility**: IIn each record, there's a direct link to original PDFs so reporters can pull context and verify the data easily. Readers also can benefit from the accessibility of primary sources.
+- **Geographic Info**: With the address and geo_location info, we are able to analyze the money a candidate spent on local or out-of-state business. 
+- **Transaction-level Detail**: Each row appears to represent an individual contribution or transaction with amount, time, location, etc. We are able to track the money over time, aggregate by candidate, identify any time or location-based patterns and compare them. This is stronger than summary-level reports.
 
 
 ### Weakness
-1. **Formatting Problem**: In the Amount column, the amount should be numeric instead of text. This will cost us some time to clean them up and double-check the numbers and potential calculation errors.
-2. **Spelling Inconsistency**: For example, for candidate William Roth, his name is spelled in 3 different ways in this dataset: Bill Roth, William Roth and WILLIAM ROTH. This might cause double-counting or grouping in our analysis. We have to check all of the candidates and do some manual standardizations.
-3. **Lack of Details**: After carefully reviewing several campaign finance reports, I noticed that the dataset still lacks certain details. For instance, the reports clearly disclose the purpose of each expenditure, but the dataset only lists a vague term like “Expenditure.” If we only look at the dataset, we cannot tell whether a candidate spent $1,000 at Walmart for lobbying or simply buying office supplies.
+- **Formatting Problem**: In the Amount column, the amount should be numeric instead of text. This will cost us some time to clean them up and double-check the numbers and potential calculation errors.
+- **Spelling Inconsistency**: For example, for candidate William Roth, his name is spelled in 3 different ways in this dataset: Bill Roth, William Roth and WILLIAM ROTH. This might cause double-counting or grouping in our analysis. We have to check all of the candidates and do some manual standardizations.
+- **Lack of Details**: After carefully reviewing several campaign finance reports, I noticed that the dataset still lacks certain details. For instance, the reports clearly disclose the purpose of each expenditure, but the dataset only lists a vague term like “Expenditure.” If we only look at the dataset, we cannot tell whether a candidate spent $1,000 at Walmart for lobbying or simply buying office supplies.
 
 ### Possible Angles/Potential Stories
 1. **Does advantage in fundraising lead to a council seat** - We can analyze the total donations, donation size distributions and frequency of large donors by candidate to see if the incumbent City Council members received more donations and other financial support than their competitors.
