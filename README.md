@@ -10,7 +10,7 @@ _This document is created by Levi Jiang in February 2026 for the exclusive refer
 
 ### Three Technical Checks
 - Inspect the page to see how the table is loaded, checking whether the data exists directly in an HTML div, is retrieved through background API, or is rendered dynamically via JavaScript.
-- Check the site’s robots.txt file or other posted terms of use to determine whether automated scraping is permitted and whether specific sections are restricted.
+- Check the site’s robots.txt file or other terms of use to determine whether automated scraping is permitted and whether specific sections are restricted.
 - Check the page load speed and if there's blocking after repeated requests. It can help determine whether we can use auto scrapping to pull all the data at once or need some throttling.
 
 ### Ethical or Legal Considerations
