@@ -28,8 +28,7 @@ _This document is created by Levi Jiang in February 2026 for the exclusive refer
 - Ask some researchers and legal nonprofits for available materials
 
 ### Scrapping Tools and Methods
-- If the table loads via background requests, then usually we can find an endpoint returning HTML or JSON. I can use Python `requests` to replicate these calls across the desired years and months, and clean them up with `pandas`.
-- If the data is embedded in static HTML elements then I can use `requests` and `pandas’ read_html` function to extract the tables.
+- If the table loads via background requests, usually we can find an endpoint returning HTML or JSON. I can use Python `requests` to replicate these calls across the desired years and months, and clean them up with `pandas`.
 - Pseudo code:
 ```
 for year in [2023, 2024, 2025]:
